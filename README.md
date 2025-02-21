@@ -97,7 +97,7 @@ Le fichier `docker-compose.yml` définit deux services :
 
 
 ## Screenshots
-![screenshot](screenshots/image1.png)
+![screenshot](screenshots/image3.png)
 ![screenshot](screenshots/image.png)
 ![screenshot](screenshots/image2.png)
 
