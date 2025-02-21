@@ -1,0 +1,34 @@
+services:
+  db:
+    image: mongo:latest
+    container_name: db
+    networks:
+      - pokemon_network
+    volumes:
+      # Le fichier pokemon.json est placé dans data/pokemon.json et sera monté dans
+      # /docker-entrypoint-initdb.d pour un import automatique lors du premier démarrage.
+      - ./data/pokemon.json:/docker-entrypoint-initdb.d/pokemon.json:ro
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: ./pokemon-tournament
+      dockerfile: Dockerfile
+    container_name: pokemon-app
+    networks:
+      - pokemon_network
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+networks:
+  pokemon_network:
+    driver: bridge
