@@ -35,23 +35,27 @@ Les deux fonctionnalités principales sont :
    ```env
    MONGO_URI=mongodb://db:27017/pokemon
    ```
-
+   Dans le fichier `TD_Pokemon_NoSQL/data/mongo-init.sh` vérifier que les fins de lignes soit bien en LF et non en CRLF
+   
 4) **Lancer Docker puis lancer l'application avec Docker Compose depuis le repertoire "TD_Pokemon_NoSQL"**
    ```bash
-   docker-compose up --build
+   docker-compose up --build -d
    ```
 
    **Cette commande va** :
 
     - Construire l'image de l'application Next.js depuis le Dockerfile (dans le dossier pokemon-tournament).
 
-    - Démarrer un conteneur MongoDB qui importe automatiquement les données depuis data/pokemon.json.
+    - Démarrer un conteneur MongoDB qui crée automatiquement les collections dans la base de données pokemon.
 
-    - Démarrer l'application sur le port 3000 et MongoDB sur le port 27017.
+    - Démarrer l'application sur le port 3000 et MongoDB sur le port 27018.
       
     - S'assurer que la base de données est opérationnelle (via healthcheck) avant de lancer l'application.
-
-5) **Accéder à l'application** :
+    
+5) **Importer les données dans la base MongoDB Compass**
+   Depuis MongoDB Compass importer le fichier pokemon.json `TD_Pokemon_NoSQL/data/pokemon.json` dans base de données pokemon dans la collection pokedex.
+   
+6) **Accéder à l'application** :
    Ouvrir http://localhost:3000 dans un navigateur.
 
 ## Structure du Projet :
