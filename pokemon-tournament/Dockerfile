@@ -1,5 +1,5 @@
 # Étape 1 : Construction
-FROM node:16-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Copier uniquement les fichiers de dépendances
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Étape 2 : Exécution
-FROM node:16-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 

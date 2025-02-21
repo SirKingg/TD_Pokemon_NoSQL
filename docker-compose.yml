@@ -1,17 +1,21 @@
 services:
   db:
-    image: mongo:latest
+    image: mongo:6.0
     container_name: db
     networks:
       - pokemon_network
     volumes:
-      # Le fichier pokemon.json est placé dans data/pokemon.json et sera monté dans
-      # /docker-entrypoint-initdb.d pour un import automatique lors du premier démarrage.
+      # Le fichier JSON est monté en lecture seule
       - ./data/pokemon.json:/docker-entrypoint-initdb.d/pokemon.json:ro
+      # Le script d'initialisation est monté sans read-only pour permettre le chmod
+      - ./data/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
     ports:
       - "27017:27017"
+    # On rend le script exécutable et on lance MongoDB
+    command: >
+      bash -c "chmod +x /docker-entrypoint-initdb.d/mongo-init.sh && docker-entrypoint.sh mongod"
     healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      test: ["CMD-SHELL", "mongosh --host localhost --eval 'db.adminCommand({ ping: 1 })' || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
