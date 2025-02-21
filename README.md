@@ -20,6 +20,7 @@ Les deux fonctionnalités principales sont :
 - [Docker](https://www.docker.com/) et [Docker Compose](https://docs.docker.com/compose/) installés sur votre machine.
 
 ## Installation et Exécution :
+
 1) **Cloner le projet**
     ```bash
    git clone https://github.com/SirKingg/TD_Pokemon_NoSQL.git
@@ -27,6 +28,7 @@ Les deux fonctionnalités principales sont :
     ```
 
 2) **Configurer l'environnement** :
+
    Créer un fichier .env.local à la racine du projet :
     ```bash
    echo. > .env.local
@@ -36,8 +38,10 @@ Les deux fonctionnalités principales sont :
    MONGO_URI=mongodb://db:27017/pokemon
    ```
    Dans le fichier `TD_Pokemon_NoSQL/data/mongo-init.sh` vérifier que les fins de lignes soit bien en LF et non en CRLF
-   
-4) **Lancer Docker puis lancer l'application avec Docker Compose depuis le repertoire "TD_Pokemon_NoSQL"**
+
+
+3) **Lancer Docker puis lancer l'application avec Docker Compose depuis le repertoire "TD_Pokemon_NoSQL"**
+
    ```bash
    docker-compose up --build -d
    ```
@@ -52,10 +56,12 @@ Les deux fonctionnalités principales sont :
       
     - S'assurer que la base de données est opérationnelle (via healthcheck) avant de lancer l'application.
     
-5) **Importer les données dans la base MongoDB Compass**
+4) **Importer les données dans la base MongoDB Compass** :
+
    Depuis MongoDB Compass importer le fichier pokemon.json `TD_Pokemon_NoSQL/data/pokemon.json` dans base de données pokemon dans la collection pokedex.
    
-6) **Accéder à l'application** :
+5) **Accéder à l'application** :
+
    Ouvrir http://localhost:3000 dans un navigateur.
 
 ## Structure du Projet :
@@ -82,6 +88,11 @@ Le fichier `docker-compose.yml` définit deux services :
     - Construit l'application Next.js à partir du Dockerfile situé dans le dossier `pokemon-tournament`.
     - Expose le port 3000.
     - Dépend du service `db` (condition `service_healthy`) pour s'assurer que la base de données est prête avant de démarrer l'application.
+
+
+## Screenshots
+![screenshot](screenshots/image.png)
+![screenshot](screenshots/image2.png)
 
 ## Auteurs :
 **Thibaut Jacquemin & Brice Volpi**
