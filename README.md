@@ -45,7 +45,7 @@ Les deux fonctionnalités principales sont :
 
     - Démarrer l'application sur le port 3000 et MongoDB sur le port 27017.
       
-S'assurer que la base de données est opérationnelle (via healthcheck) avant de lancer l'application.
+    - S'assurer que la base de données est opérationnelle (via healthcheck) avant de lancer l'application.
 
 4) **Accéder à l'application** :
    Ouvrir http://localhost:3000 dans un navigateur.
