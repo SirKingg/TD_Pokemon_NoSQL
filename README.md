@@ -23,7 +23,7 @@ Les deux fonctionnalités principales sont :
 1) **Cloner le projet**
     ```bash
    git clone https://github.com/SirKingg/TD_Pokemon_NoSQL.git
-   cd pokemon-tournament
+   cd TD_Pokemon_NoSQL/pokemon-tournament
     ```
 
 2) **Configurer l'environnement** :
