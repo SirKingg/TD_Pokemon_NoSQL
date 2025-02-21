@@ -27,12 +27,16 @@ Les deux fonctionnalités principales sont :
     ```
 
 2) **Configurer l'environnement** :
-   Créer un fichier .env.local à la racine du projet et y définir la variable de connexion MongoDB, par exemple :
+   Créer un fichier .env.local à la racine du projet :
+    ```bash
+   echo. > .env.local
+    ```
+   Et y définir la variable de connexion MongoDB, par exemple :
    ```env
    MONGO_URI=mongodb://db:27017/pokemon
    ```
 
-3) **Lancer l'application avec Docker Compose**
+4) **Lancer Docker puis lancer l'application avec Docker Compose depuis le repertoire "TD_Pokemon_NoSQL"**
    ```bash
    docker-compose up --build
    ```
@@ -47,7 +51,7 @@ Les deux fonctionnalités principales sont :
       
     - S'assurer que la base de données est opérationnelle (via healthcheck) avant de lancer l'application.
 
-4) **Accéder à l'application** :
+5) **Accéder à l'application** :
    Ouvrir http://localhost:3000 dans un navigateur.
 
 ## Structure du Projet :
