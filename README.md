@@ -2,7 +2,7 @@
 
 Ce projet est une application Next.js qui combine un **Pokédex** et un **Tournoi Pokémon**.
 
-Les deux fonctionnalités principales sont :
+Les trois fonctionnalités principales sont :
 
 - **Pokédex** : 
   - Affichage d'une liste de Pokémon avec recherche et filtrage par type.
@@ -15,9 +15,15 @@ Les deux fonctionnalités principales sont :
   - Affichage graphique d'un arbre du tournoi avec un historique détaillé des combats.
   - Affichage du vainqueur du tournoi avec ses Pokémon présentés dans un conteneur au dégradé CSS personnalisé.
   - Enregistrement des données de combat dans la collection MongoDB `battles`.
+ 
+- **Lecteur de musique**
+    - Lecteur dépliable en bas à droite de l'écran avec le logo haut parleur.
+    - 50 musiques des jeux pokémons joués aléatoirement.
+    - Système pour Recommencer la musique, Lancer la précédente, Lancer la suivante, Faire Pause / Play, Couper le son.
+    - Lecteur persistant sur les deux pages, donc pas de coupure au changement de page.
 
 ##  Prérequis :
-- [Docker](https://www.docker.com/) et [Docker Compose](https://docs.docker.com/compose/) installés sur votre machine.
+- [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) et [MongoDBCompass](https://www.mongodb.com/products/tools/compass) installés sur votre machine.
 
 ## Installation et Exécution :
 
@@ -91,6 +97,7 @@ Le fichier `docker-compose.yml` définit deux services :
 
 
 ## Screenshots
+![screenshot](screenshots/Capture d'écran 2025-02-21 154036.png)
 ![screenshot](screenshots/image.png)
 ![screenshot](screenshots/image2.png)
 
