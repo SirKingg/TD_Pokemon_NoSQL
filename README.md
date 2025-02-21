@@ -12,7 +12,7 @@ Les deux fonctionnalités principales sont :
   - Génération automatique de 32 équipes composées de 6 Pokémon chacune.
   - Simulation d'un tournoi en élimination directe avec combats 1 contre 1.
   - Calcul des dégâts, coups critiques et contre-attaques.
-  - Affichage graphique d'un arbre du tournoi (largeur maximale de 1200px) avec un historique détaillé des combats.
+  - Affichage graphique d'un arbre du tournoi avec un historique détaillé des combats.
   - Affichage du vainqueur du tournoi avec ses Pokémon présentés dans un conteneur au dégradé CSS personnalisé.
   - Enregistrement des données de combat dans la collection MongoDB `battles`.
 
@@ -41,9 +41,10 @@ Les deux fonctionnalités principales sont :
 
     - Construire l'image de l'application Next.js depuis le Dockerfile (dans le dossier pokemon-tournament).
 
-    - Démarrer un conteneur MongoDB qui importe automatiquement les données depuis data/pokemon.json (veillez à créer ce fichier avec vos données).
+    - Démarrer un conteneur MongoDB qui importe automatiquement les données depuis data/pokemon.json.
 
     - Démarrer l'application sur le port 3000 et MongoDB sur le port 27017.
+      
 S'assurer que la base de données est opérationnelle (via healthcheck) avant de lancer l'application.
 
 4) **Accéder à l'application** :
